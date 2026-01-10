@@ -1,8 +1,8 @@
 # SimpleFolderIcon
 
-[![GitHub all releases](https://img.shields.io/github/downloads/SeaeeesSan/SimpleFolderIcon/total)](https://github.com/SeaeeesSan/SimpleFolderIcon/releases)
-[![GitHub license](https://img.shields.io/github/license/SeaeeesSan/SimpleFolderIcon)](https://github.com/SeaeeesSan/SimpleFolderIcon/blob/master/LICENSE)
-[![openupm](https://img.shields.io/npm/v/com.seaeees.simple-folder-icon?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/com.seaeees.simple-folder-icon/)
+[![GitHub all releases](https://img.shields.io/github/downloads/S0iRu/SimpleFolderIcon/total)](https://github.com/S0iRu/SimpleFolderIcon/releases)
+[![GitHub license](https://img.shields.io/github/license/S0iRu/SimpleFolderIcon)](https://github.com/S0iRu/SimpleFolderIcon/blob/master/LICENSE)
+[![openupm](https://img.shields.io/npm/v/com.S0iRu.simple-folder-icon?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/com.S0iRu.simple-folder-icon/)
 
 ### 日本語版は[こちら](README_jp.md)
 
@@ -56,19 +56,19 @@ Unity2019.4 or later
 - Window > Package Manager > Add package from git URL...
 
 ```
-https://github.com/SeaeeesSan/SimpleFolderIcon.git?path=Packages/com.seaeees.simple-folder-icon
+https://github.com/S0iRu/SimpleFolderIcon.git?path=Packages/com.S0iRu.simple-folder-icon
 ```
 
 ### Install via OpenUPM
 ```bash
-openupm add com.seaeees.simple-folder-icon
+openupm add com.S0iRu.simple-folder-icon
 ```
 
 ### Install manually (.unitypackage)
-- Download the package from [Releases](https://github.com/SeaeeesSan/SimpleFolderIcon/releases).
+- Download the package from [Releases](https://github.com/S0iRu/SimpleFolderIcon/releases).
 
  
 ## License
  
-- [MIT license](https://github.com/SeaeeesSan/SimpleFolderIcon/blob/master/LICENSE)
+- [MIT license](https://github.com/S0iRu/SimpleFolderIcon/blob/master/LICENSE)
 - Some of the icons are from [Material design icons](https://fonts.google.com/icons).

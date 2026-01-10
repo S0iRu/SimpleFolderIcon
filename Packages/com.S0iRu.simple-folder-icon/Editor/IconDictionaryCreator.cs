@@ -6,7 +6,7 @@ namespace SimpleFolderIcon.Editor
 {
     public class IconDictionaryCreator : AssetPostprocessor
     {
-        private const string AssetsPath = "com.seaeees.simple-folder-icon/Icons";
+        private const string AssetsPath = "com.S0iRu.simple-folder-icon/Icons";
         internal static Dictionary<string, Texture> IconDictionary;
 
         private static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)

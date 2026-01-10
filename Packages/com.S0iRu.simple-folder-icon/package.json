@@ -1,0 +1,14 @@
+{
+  "name": "com.S0iRu.simple-folder-icon",
+  "version": "1.2.5",
+  "displayName": "Simple Folder Icon",
+  "description": "SimpleFolderIcon enables you to customize the color and the icon label of your folders in the Unity project browser.",
+  "unity": "2020.3",
+  "documentationUrl": "https://github.com/S0iRu/SimpleFolderIcon",
+  "changelogUrl": "https://github.com/S0iRu/SimpleFolderIcon/releases",
+  "licensesUrl": "https://github.com/S0iRu/SimpleFolderIcon/blob/master/LICENSE",
+  "author": {
+    "name": "S0iRu",
+    "url": "https://github.com/S0iRu"
+  }
+}

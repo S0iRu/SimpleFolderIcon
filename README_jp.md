@@ -1,7 +1,7 @@
 # SimpleFolderIcon
 
-[![GitHub all releases](https://img.shields.io/github/downloads/SeaeeesSan/SimpleFolderIcon/total)](https://github.com/SeaeeesSan/SimpleFolderIcon/releases)
-[![GitHub license](https://img.shields.io/github/license/SeaeeesSan/SimpleFolderIcon)](https://github.com/SeaeeesSan/SimpleFolderIcon/blob/master/LICENSE)
+[![GitHub all releases](https://img.shields.io/github/downloads/S0iRu/SimpleFolderIcon/total)](https://github.com/S0iRu/SimpleFolderIcon/releases)
+[![GitHub license](https://img.shields.io/github/license/S0iRu/SimpleFolderIcon)](https://github.com/S0iRu/SimpleFolderIcon/blob/master/LICENSE)
 
 ![image](https://github.com/user-attachments/assets/dc74f5c8-680e-427b-bc69-fe61ecf8bc0e)
 
@@ -49,18 +49,18 @@ Unity2019.4 or later
 - Window > Package Manager > Add package from git URL...
 
 ```
-https://github.com/SeaeeesSan/SimpleFolderIcon.git?path=Packages/com.seaeees.simple-folder-icon
+https://github.com/S0iRu/SimpleFolderIcon.git?path=Packages/com.S0iRu.simple-folder-icon
 ```
 ### Install via OpenUPM
 ```bash
-openupm add com.seaeees.simple-folder-icon
+openupm add com.S0iRu.simple-folder-icon
 ```
 
 ### Install manually (.unitypackage)
-- [Releases](https://github.com/SeaeeesSan/SimpleFolderIcon/releases)から.unitypackage形式でダウンロード
+- [Releases](https://github.com/S0iRu/SimpleFolderIcon/releases)から.unitypackage形式でダウンロード
 
 
 ## License
  
-- [MIT license](https://github.com/SeaeeesSan/SimpleFolderIcon/blob/master/LICENSE)
+- [MIT license](https://github.com/S0iRu/SimpleFolderIcon/blob/master/LICENSE)
 - フォルダアイコンの一部に、[Material design icons](https://fonts.google.com/icons)を使用しています。

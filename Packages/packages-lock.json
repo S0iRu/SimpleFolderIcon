@@ -1,7 +1,7 @@
 {
   "dependencies": {
-    "com.seaeees.simple-folder-icon": {
-      "version": "file:com.seaeees.simple-folder-icon",
+    "com.S0iRu.simple-folder-icon": {
+      "version": "file:com.S0iRu.simple-folder-icon",
       "depth": 0,
       "source": "embedded",
       "dependencies": {}

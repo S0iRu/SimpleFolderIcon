@@ -1,0 +1,26 @@
+{
+  "name": "S0iRu's VPM Repository",
+  "author": "S0iRu",
+  "url": "https://raw.githubusercontent.com/S0iRu/SimpleFolderIcon/master/index.json",
+  "id": "com.s0iru.vpm",
+  "packages": {
+    "com.s0iru.simple-folder-icon": {
+      "versions": {
+        "1.2.5": {
+          "name": "com.s0iru.simple-folder-icon",
+          "displayName": "Simple Folder Icon",
+          "version": "1.2.5",
+          "unity": "2020.3",
+          "description": "SimpleFolderIcon enables you to customize the color and the icon label of your folders in the Unity project browser.",
+          "author": {
+            "name": "S0iRu",
+            "url": "https://github.com/S0iRu"
+          },
+          "gitDependency": "https://github.com/S0iRu/SimpleFolderIcon.git?path=/Packages/com.S0iRu.simple-folder-icon",
+          "repo": "https://github.com/S0iRu/SimpleFolderIcon",
+          "vpmDependencies": {}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+name: Build Repo Listing
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+    paths:
+      - 'Packages/**'
+      - '.github/workflows/build-listing.yml'
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  build-listing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Build Repo Listing
+        uses: vrchat-community/package-list-action@v1.1.1
+        with:
+          source: Packages/com.S0iRu.simple-folder-icon/package.json
+          output: index.json
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+          publish_branch: gh-pages
+          force_orphan: true

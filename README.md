@@ -52,6 +52,15 @@ Optional: if you want to use one image for multiple folders, you may copy `Asset
 ## Installation
 Unity2019.4 or later
 
+### Install via VPM (VRChat Package Manager)
+1. Open VCC (VRChat Creator Companion)
+2. Go to Settings > Packages > Add Repository
+3. Add this URL:
+```
+https://raw.githubusercontent.com/S0iRu/SimpleFolderIcon/master/index.json
+```
+4. Go to your project and add "Simple Folder Icon" from the package list
+
 ### using Git URL
 - Window > Package Manager > Add package from git URL...
 

@@ -45,6 +45,15 @@
 ## Installation
 Unity2019.4 or later
 
+### VPM経由でインストール（VRChat Package Manager）
+1. VCC（VRChat Creator Companion）を開く
+2. Settings > Packages > Add Repositoryへ移動
+3. 以下のURLを追加:
+```
+https://raw.githubusercontent.com/S0iRu/SimpleFolderIcon/master/index.json
+```
+4. プロジェクトに移動して、パッケージリストから「Simple Folder Icon」を追加
+
 ### using Git URL
 - Window > Package Manager > Add package from git URL...
 

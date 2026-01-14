@@ -1,13 +1,13 @@
 {
   "name": "S0iRu's VPM Repository",
   "author": "S0iRu",
-  "url": "https://raw.githubusercontent.com/S0iRu/SimpleFolderIcon/master/index.json",
   "id": "com.s0iru.vpm",
+  "url": "https://raw.githubusercontent.com/S0iRu/SimpleFolderIcon/master/index.json",
   "packages": {
-    "com.S0iRu.simple-folder-icon": {
+    "com.s0iru.simple-folder-icon": {
       "versions": {
         "1.2.5": {
-          "name": "com.S0iRu.simple-folder-icon",
+          "name": "com.s0iru.simple-folder-icon",
           "displayName": "Simple Folder Icon",
           "version": "1.2.5",
           "unity": "2020.3",
@@ -16,9 +16,12 @@
             "name": "S0iRu",
             "url": "https://github.com/S0iRu"
           },
-          "gitDependency": "https://github.com/S0iRu/SimpleFolderIcon.git?path=/Packages/com.S0iRu.simple-folder-icon",
+          "url": "https://github.com/S0iRu/SimpleFolderIcon/releases/download/v1.2.5/com.s0iru.simple-folder-icon-1.2.5.zip",
           "repo": "https://github.com/S0iRu/SimpleFolderIcon",
-          "vpmDependencies": {}
+          "dependencies": {},
+          "vpmDependencies": {},
+          "legacyFolders": {},
+          "legacyFiles": {}
         }
       }
     }

@@ -28,17 +28,19 @@ namespace SimpleFolderIcon.Editor
             var folderName = Path.GetFileName(path);
             Texture texture = null;
 
-            // まず完全一致を試す
+            // まず完全一致を試す（大文字小文字を区別しない）
             if (iconDictionary.ContainsKey(folderName))
             {
                 texture = iconDictionary[folderName];
             }
             else
             {
-                // 完全一致が見つからない場合、部分一致で検索
+                // 完全一致が見つからない場合、部分一致で検索（大文字小文字を区別しない）
+                var folderNameLower = folderName.ToLowerInvariant();
                 foreach (var kvp in iconDictionary)
                 {
-                    if (folderName.Contains(kvp.Key) || kvp.Key.Contains(folderName))
+                    var keyLower = kvp.Key.ToLowerInvariant();
+                    if (folderNameLower.Contains(keyLower) || keyLower.Contains(folderNameLower))
                     {
                         texture = kvp.Value;
                         break;

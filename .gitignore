@@ -75,3 +75,9 @@ crashlytics-build.properties
 Assets/demo/
 Assets/Scenes/
 Assets/demo.meta
+
+# PSD files
+*.psd
+
+# Unity meta files in Packages
+*.meta

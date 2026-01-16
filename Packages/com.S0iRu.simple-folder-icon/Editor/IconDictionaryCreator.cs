@@ -26,7 +26,9 @@ namespace SimpleFolderIcon.Editor
         {
             foreach (string str in assets)
             {
-                if (ReplaceSeparatorChar(Path.GetDirectoryName(str)) == "Packages/" + AssetsPath)
+                var dirPath = ReplaceSeparatorChar(Path.GetDirectoryName(str));
+                // サブディレクトリ（Customフォルダ等）も検知
+                if (dirPath.StartsWith("Packages/" + AssetsPath))
                 {
                     return true;
                 }
@@ -41,15 +43,26 @@ namespace SimpleFolderIcon.Editor
 
         internal static void BuildDictionary()
         {
-            var dictionary = new Dictionary<string, Texture>();
+            // 大文字小文字を区別しない辞書
+            var dictionary = new Dictionary<string, Texture>(System.StringComparer.OrdinalIgnoreCase);
 
             var appDirPath = Application.dataPath.Replace("Assets","Packages");
             var dir = new DirectoryInfo(appDirPath + "/" + AssetsPath);
-            FileInfo[] info = dir.GetFiles("*.png");
+            // サブディレクトリも含めて検索
+            FileInfo[] info = dir.GetFiles("*.png", SearchOption.AllDirectories);
             foreach(FileInfo f in info)
             {
-                var texture = (Texture)AssetDatabase.LoadAssetAtPath($"Packages/{AssetsPath}/{f.Name}", typeof(Texture2D));
-                dictionary.Add(Path.GetFileNameWithoutExtension(f.Name),texture);
+                // サブディレクトリからの相対パスを取得
+                var relativePath = f.FullName.Substring(dir.FullName.Length + 1).Replace("\\", "/");
+                var assetPath = $"Packages/{AssetsPath}/{relativePath}";
+                var texture = (Texture)AssetDatabase.LoadAssetAtPath(assetPath, typeof(Texture2D));
+                var key = Path.GetFileNameWithoutExtension(f.Name);
+                
+                // 重複キーを避けるため、既に存在する場合はスキップ
+                if (!dictionary.ContainsKey(key))
+                {
+                    dictionary.Add(key, texture);
+                }
             }
 
             FileInfo[] infoSO = dir.GetFiles("*.asset");

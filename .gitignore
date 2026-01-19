@@ -79,5 +79,5 @@ Assets/demo.meta
 # PSD files
 *.psd
 
-# Unity meta files in Packages
-*.meta
+# Package meta files
+/Packages/**/*.meta

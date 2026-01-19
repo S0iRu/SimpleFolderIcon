@@ -9,7 +9,13 @@ namespace SimpleFolderIcon.Editor
     {
         static CustomFolder()
         {
-            IconDictionaryCreator.BuildDictionary();
+            // エディタが完全に初期化された後に辞書を構築
+            EditorApplication.delayCall += () =>
+            {
+                IconDictionaryCreator.BuildDictionary();
+                // 辞書構築後にProjectウィンドウを再描画
+                EditorApplication.RepaintProjectWindow();
+            };
             EditorApplication.projectWindowItemOnGUI += DrawFolderIcon;
         }
 
@@ -18,9 +24,11 @@ namespace SimpleFolderIcon.Editor
             var path = AssetDatabase.GUIDToAssetPath(guid);
             var iconDictionary = IconDictionaryCreator.IconDictionary;
 
-            if (path == "" ||
+            // 辞書がまだ初期化されていない場合は何もしない
+            if (iconDictionary == null ||
+                string.IsNullOrEmpty(path) ||
                 Event.current.type != EventType.Repaint ||
-                !File.GetAttributes(path).HasFlag(FileAttributes.Directory))
+                !AssetDatabase.IsValidFolder(path))
             {
                 return;
             }

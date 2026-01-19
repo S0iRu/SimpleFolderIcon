@@ -46,39 +46,41 @@ namespace SimpleFolderIcon.Editor
             // 大文字小文字を区別しない辞書
             var dictionary = new Dictionary<string, Texture>(System.StringComparer.OrdinalIgnoreCase);
 
-            var appDirPath = Application.dataPath.Replace("Assets","Packages");
-            var dir = new DirectoryInfo(appDirPath + "/" + AssetsPath);
-            // サブディレクトリも含めて検索
-            FileInfo[] info = dir.GetFiles("*.png", SearchOption.AllDirectories);
-            foreach(FileInfo f in info)
+            var packagePath = $"Packages/{AssetsPath}";
+            
+            // AssetDatabaseを使用してパッケージ内のテクスチャを検索
+            // これによりVPM/UPMでインストールされた場合でも正しく動作する
+            var textureGuids = AssetDatabase.FindAssets("t:Texture2D", new[] { packagePath });
+            foreach (var guid in textureGuids)
             {
-                // サブディレクトリからの相対パスを取得
-                var relativePath = f.FullName.Substring(dir.FullName.Length + 1).Replace("\\", "/");
-                var assetPath = $"Packages/{AssetsPath}/{relativePath}";
-                var texture = (Texture)AssetDatabase.LoadAssetAtPath(assetPath, typeof(Texture2D));
-                var key = Path.GetFileNameWithoutExtension(f.Name);
-                
-                // 重複キーを避けるため、既に存在する場合はスキップ
-                if (!dictionary.ContainsKey(key))
+                var assetPath = AssetDatabase.GUIDToAssetPath(guid);
+                var texture = AssetDatabase.LoadAssetAtPath<Texture2D>(assetPath);
+                if (texture != null)
                 {
-                    dictionary.Add(key, texture);
+                    var key = Path.GetFileNameWithoutExtension(assetPath);
+                    // 重複キーを避けるため、既に存在する場合はスキップ
+                    if (!dictionary.ContainsKey(key))
+                    {
+                        dictionary.Add(key, texture);
+                    }
                 }
             }
 
-            FileInfo[] infoSO = dir.GetFiles("*.asset");
-            foreach (FileInfo f in infoSO) 
+            // ScriptableObjectを検索
+            var soGuids = AssetDatabase.FindAssets("t:FolderIconSO", new[] { packagePath });
+            foreach (var guid in soGuids)
             {
-                var folderIconSO = (FolderIconSO)AssetDatabase.LoadAssetAtPath($"Packages/{AssetsPath}/{f.Name}", typeof(FolderIconSO));
+                var assetPath = AssetDatabase.GUIDToAssetPath(guid);
+                var folderIconSO = AssetDatabase.LoadAssetAtPath<FolderIconSO>(assetPath);
 
-                if (folderIconSO != null) 
+                if (folderIconSO != null && folderIconSO.icon != null) 
                 {
                     var texture = (Texture)folderIconSO.icon;
 
                     foreach (string folderName in folderIconSO.folderNames) 
                     {
-                        if (folderName != null) 
+                        if (!string.IsNullOrEmpty(folderName) && !dictionary.ContainsKey(folderName)) 
                         {
-                            // dictionary.TryAdd(folderName, texture);
                             dictionary.Add(folderName, texture);
                         }
                     }

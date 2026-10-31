@@ -1,0 +1,18 @@
+name: Publish VPM
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - Packages/com.S0iRu.simple-folder-icon/package.json
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    uses: S0iRu/vpm-repos/.github/workflows/publish-package.yml@main
+    with:
+      package_dir: Packages/com.S0iRu.simple-folder-icon
+    secrets:
+      LISTING_DISPATCH_TOKEN: ${{ secrets.LISTING_DISPATCH_TOKEN }}

@@ -2,14 +2,6 @@ name: Build Repo Listing
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - master
-    paths:
-      - 'Packages/**'
-      - '.github/workflows/build-listing.yml'
-  release:
-    types: [published]
 
 permissions:
   contents: write
